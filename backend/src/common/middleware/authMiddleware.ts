@@ -7,7 +7,7 @@ import { ResponseStatus, ServiceResponse } from '@/common/models/serviceResponse
 import { getSession } from '@/common/models/session';
 import { handleServiceResponse } from '@/common/utils/httpHandlers';
 
-const PUBLIC_ROUTES = ['/auth/nonce', '/auth/verify']; // // Exact public routes
+const PUBLIC_ROUTES = ['/auth/nonce', '/auth/verify', '/health-check']; // Exact public routes
 const PUBLIC_ROUTE_PREFIXES = ['/swagger/']; // Any route starting with these prefixes should be public
 
 const unauthorizedResponseObjectSchema = z.object({
