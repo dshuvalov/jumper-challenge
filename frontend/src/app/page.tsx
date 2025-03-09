@@ -91,8 +91,18 @@ export default function Home() {
   const userTokensFetchedRef = useRef(false);
   useEffect(
     function fetchUserAssets() {
-      if (isAuthenticated && !userTokensFetchedRef.current) {
-        handleLoadTokens(address!);
+      if (isAuthenticated && !userTokensFetchedRef.current && address) {
+        setInputValue(address);
+        setWalletAddress(address);
+        handleLoadTokens(address);
+        userTokensFetchedRef.current = true;
+      }
+
+      if (!isAuthenticated) {
+        setRows([]);
+        setInputValue('');
+        setWalletAddress(null);
+        userTokensFetchedRef.current = false;
       }
     },
     [address, handleLoadTokens, isAuthenticated]
@@ -135,7 +145,6 @@ export default function Home() {
               size="small"
               disabled={!isAuthenticated || loadingRef.current}
               label={isAuthenticated ? 'Wallet Address' : 'Connect wallet first'}
-              defaultValue={address}
               value={inputValue}
               error={isInputValueInvalid}
               helperText={isInputValueInvalid ? 'Incorrect wallet address' : ' '}
