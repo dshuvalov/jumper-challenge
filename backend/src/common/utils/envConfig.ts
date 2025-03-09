@@ -23,4 +23,5 @@ export const env = cleanEnv(process.env, {
   COMMON_RATE_LIMIT_WINDOW_MS: num({ devDefault: testOnly(1000) }),
   AUTH_SECRET: str({ devDefault: testOnly('secret') }),
   SESSION_TTL_MINUTES: sessionTTLValidator({ devDefault: testOnly(5) }),
+  ALCHEMY_API_KEY: str({ devDefault: testOnly('key') }),
 });
