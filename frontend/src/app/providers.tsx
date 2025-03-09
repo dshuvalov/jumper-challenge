@@ -35,7 +35,6 @@ export function Providers({ children }: { children: React.ReactNode }) {
   const verifyingRef = useRef(false);
   const [authStatus, setAuthStatus] = useState<AuthenticationStatus>('loading');
 
-  // Fetch user when:
   useEffect(() => {
     const fetchStatus = async () => {
       if (fetchingStatusRef.current || verifyingRef.current) {

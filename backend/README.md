@@ -62,7 +62,6 @@ The codebase is designed for scalability and maintainability:
 - **common/models** folder: Contains app models: Typescript typings and zod schemas.
 - **common/third-parties** folder: Contains third-party SDKs.
 - **common/utils**: Environment configuration, logging, and other shared helper functions.
-- **
 
 ## Iron-Session for Authentication
 For smooth and secure user authentication, the project integrates the **iron-session** library. This implementation ensures:
