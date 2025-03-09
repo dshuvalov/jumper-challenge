@@ -63,5 +63,8 @@
     "**/*.{js,ts}": "npm run lint:fix"
   },
   "repository": "lifinance/jumper-challenge",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": ">=20.x.x"
+  }
 }
