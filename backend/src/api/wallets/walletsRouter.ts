@@ -70,7 +70,8 @@ export const walletsRouter = (() => {
         tokensPageKey: tokenBalances.pageKey,
       };
     } catch (error) {
-      console.log(error);
+      // TODO: make better error handling, error from alchemy or wallet not found
+      console.error(error);
       return { address: walletAddress, tokens: [] };
     }
   }
